@@ -71,5 +71,8 @@ myApp.controller('flowerController', function($scope) {
         name: 'Троянда кольорова',
         descr: '35',
         price: '2200'
-    }]
+    }];
+       $scope.orderByMe = function(bouquet) {
+        $scope.myOrderBy = bouquet;
+    }
 });
