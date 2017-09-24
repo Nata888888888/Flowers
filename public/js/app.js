@@ -7,7 +7,7 @@ app.config(function($routeProvider) {
         })
         .when("/edit", {
             templateUrl: "edit.html",
-            controller: "flowerController"
+            controller: "editController"
         })
        .when("/basket", {
             templateUrl: "basket.html",

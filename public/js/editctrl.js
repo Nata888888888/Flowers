@@ -1,5 +1,7 @@
-myApp.controller('flowerController', function($scope, $http, flowersFactory) {
-
+var myApp = angular.module('myApp');
+myApp.controller('editController', function($scope, $http, flowersFactory) {
+    $scope.flowers = [];
+    
     flowersFactory.loadFlowers(function(flowers) {
         $scope.flowers = flowers;
     });
@@ -42,9 +44,9 @@ myApp.controller('flowerController', function($scope, $http, flowersFactory) {
             $scope.error = false;
         }
         $scope.incomplete = false;
-        if ($scope.edit && (!$scope.fName.length || !$scope.lName.length || !$scope.passw1.length || !$scope.passw2.length)) {
-            $scope.incomplete = true;
-        }
+//        if ($scope.edit && (!$scope.fName.length || !$scope.lName.length || !$scope.passw1.length || !$scope.passw2.length)) {
+//            $scope.incomplete = true;
+//        }
     };
 
 }).$inject = ["flowersFactory"];
