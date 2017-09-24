@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="col-sm-2" ng-repeat="">
+        <img src="" alt="">
+        <div ng-click="removeItem(id)">Видалити</div>
+        <div ng-click="editItem(id)">Редагувати</div>
+        
+    </div>
+    <button ng-click="editUser('new')">&#9998; Додати</button>
+    <div ng-click="addItem()">
+        <form ng-hide="hideform">
+             <h3 ng-show="edit">Додати</h3>
+             <label>Зображення</label>
+                <input type="text" ng-model="img" ng-disabled="!edit" placeholder="зображення">
+                 <br>
+             <label>Назва</label>
+                <input type="text" ng-model="name" ng-disabled="!edit" placeholder="назва">
+                 <br>
+            <label>кількість</label>
+                <input type="text" ng-model="descr" ng-disabled="!edit" placeholder="кількість">
+                 <br>
+            <label>ціна</label>
+                <input type="text" ng-model="price" ng-disabled="!edit" placeholder="ціна">
+                 <br>
+            <button ng-disabled="error || incomplete">&#10004; Зберегти зміни</button>
+        </form>
+    </div>
+</div>

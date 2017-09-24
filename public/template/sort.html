@@ -1,0 +1,20 @@
+        <div class="row">
+            <div class="col-sm-4">
+                <select class="form-control" ng-model="myOrderBy">
+                    <option>сортувати</option>
+                    <option value='price'>по зростанню ціни</option>
+                    <option value='-price'>по спаданню ціни</option>
+                    <option value='descr'>по зростанню кількості</option>
+                    <option value='-descr'>по спаданню кількості</option>
+                    <option value='name'>по алфавіту а..я</option>
+                    <option value='-name'>по алфавіту я..а</option>
+                </select>
+            </div>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" id="inputSuccess2" ng-model="search" />
+                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                </div>
+            </div>
+        </div>

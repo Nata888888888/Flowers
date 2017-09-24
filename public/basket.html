@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row">
+        <table>
+            <thead>
+                <tr>
+                   <th>Зображення</th>
+                    <th>Назва</th>
+                    <th>Кількість</th>
+                    <th>Ціна</th>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                {{basketList.length}}
+                <tr ng-repeat="item in basketList">
+                    <td>{{item.name}}</td>
+                    <td>
+                        <input type="text" ng-model="number">
+                    </td>
+                    <td>{{item.price*number}}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td>Разом</td>
+                    <td>0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>телефон</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>адреса доставки</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>час</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>для кого і як підписати</td>
+                    <td>
+                        <textarea type="text"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button>продовжити покупки</button>
+                    </td>
+                    <td></td>
+                    <td>
+                        <button ng-click="buy()">оплатити</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

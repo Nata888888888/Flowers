@@ -2,10 +2,15 @@
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
+    let button=document.getElementById("toTopBtn");
+    
+    if (!button)
+        return;
+    
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("toTopBtn").style.display = "block";
+        button.style.display = "block";
     } else {
-        document.getElementById("toTopBtn").style.display = "none";
+        button.style.display = "none";
     }
 }
 

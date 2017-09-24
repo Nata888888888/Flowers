@@ -1,0 +1,23 @@
+        <div class="container-fluid">
+            <div class="col-sm-4 items" ng-repeat="bouquet in arrChoose | filter:search | orderBy:myOrderBy">
+                <div class="row">
+                    <img src="{{bouquet.img}}" class="items_img" alt="{{bouquet.name}}+ {{bouquet.descr}} шт" id="myImg" ng-click="showModal()">
+                    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+                    <!-- The Modal -->
+                    <div id="myModalImg" class="modalImg">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="img01">
+                        <div id="caption"></div>
+                    </div>
+                </div>
+                <div class="row items_header">{{bouquet.name}}</div>
+                <div class="row items_descr">{{bouquet.descr}} шт</div>
+                <div class="row items_">
+                    <div class="col-sm-6 price">{{bouquet.price}} грн</div>
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal" ng-click="selectBouqet($index, bouquet.id)" option="{{bouquet.id}}"
+                        >Купити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
