@@ -2,6 +2,7 @@ var myApp = angular.module('myApp');
 app.factory('flowersFactory', ['$http',
     function($http) {
         var basketFlowers = [];
+      
 
         function loadFlowers(onLoad) {
             var flowers = [];

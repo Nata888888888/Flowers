@@ -1,4 +1,4 @@
-var app=angular.module('myApp', ["ngRoute"]);
+var app=angular.module('myApp', ["ngRoute","ngMaterial","wingify.timePicker"]);
 app.config(function($routeProvider) {
     $routeProvider
         .when("/", {

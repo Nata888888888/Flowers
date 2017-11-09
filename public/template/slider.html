@@ -1,119 +1,119 @@
-    <div class="container-fluid">
-        <h2 id="popular">Популярні букети</h2>
-            <div class="col-md-10 col-md-offset-1">
-            <div class="carousel slide" id="myCarousel">
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="col-md-4 hover-shadow">
-                            <a href="#">
-                                <img src="photo/rosescolor35.jpg" class="img-responsive hover-shadow">
-                                <div class="row">
-                                    <img src="{{bouquet.img}}" class="items_img" ng-click="">
+<div class = "container-fluid">
+    <h2 id = "popular">Популярні букети</h2>
+    <div class = "col-md-10 col-md-offset-1">
+        <div class = "carousel slide" id = "myCarousel">
+            <div class = "carousel-inner">
+                <div class = "item active">
+                    <div class = "col-md-4 hover-shadow">
+                        <a href = "#">
+                            <img src = "photo/rosescolor35.jpg" class = "img-responsive hover-shadow">
+                            <div class = "row">
+                                <img src = "{{bouquet.img}}" class = "items_img" ng-click = "">
+                            </div>
+                            <div class = "row items_header">{{bouquet.name}}</div>
+                            <div class = "row items_descr">{{bouquet.descr}} шт</div>
+                            <div class = "row items_">
+                                <div class = "col-sm-6 price">{{bouquet.price}} грн</div>
+                                <div class = "col-sm-6">
+                                    <button type = "button" class = "btn btn-success btn-lg btn-block">Купити</button>
                                 </div>
-                                <div class="row items_header">{{bouquet.name}}</div>
-                                <div class="row items_descr">{{bouquet.descr}} шт</div>
-                                <div class="row items_">
-                                    <div class="col-sm-6 price">{{bouquet.price}} грн</div>
-                                    <div class="col-sm-6">
-                                        <button type="button" class="btn btn-success btn-lg btn-block">Купити</button>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="col-md-4 hover-shadow">
-                            <a href="#">
-                                <img src="photo/fildflowers.jpg" class="img-responsive hover-shadow">
-                                <div class="row">
-                                    <img src="{{bouquet.img}}" class="items_img" alt="" ng-click="">
-                                </div>
-                                <div class="row items_header">{{bouquet.name}}</div>
-                                <div class="row items_descr">{{bouquet.descr}} шт</div>
-                                <div class="row items_">
-                                    <div class="col-sm-6 price">{{bouquet.price}} грн</div>
-                                    <div class="col-sm-6">
-                                        <button type="button" class="btn btn-success btn-lg btn-block">Купити</button>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="col-md-4 hover-shadow">
-                            <a href="#">
-                                <img src="photo/chrisantem13.jpg" class="img-responsive hover-shadow">
-                                <div class="row">
-                                    <img src="{{bouquet.img}}" class="items_img" alt="" ng-click="">
-                                </div>
-                                <div class="row items_header">{{bouquet.name}}</div>
-                                <div class="row items_descr">{{bouquet.descr}} шт</div>
-                                <div class="row items_">
-                                    <div class="col-sm-6 price">{{bouquet.price}} грн</div>
-                                    <div class="col-sm-6">
-                                        <button type="button" class="btn btn-success btn-lg btn-block" ng-click="">Купити</button>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="col-md-4 hover-shadow">
-                            <a href="#">
-                                <img src="photo/mixwhite&yellow.jpg" class="img-responsive hover-shadow">
-                                <div class="row">
-                                    <img src="{{bouquet.img}}" class="items_img" alt="" ng-click="">
-                                </div>
-                                <div class="row items_header">{{bouquet.name}}</div>
-                                <div class="row items_descr">{{bouquet.descr}} шт</div>
-                                <div class="row items_">
-                                    <div class="col-sm-6 price">{{bouquet.price}} грн</div>
-                                    <div class="col-sm-6">
-                                        <button type="button" class="btn btn-success btn-lg btn-block">Купити</button>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="col-md-4 hover-shadow">
-                            <a href="#">
-                                <img src="photo/lilywhite7.jpg" class="img-responsive hover-shadow">
-                                <div class="row">
-                                    <img src="{{bouquet.img}}" class="items_img" alt="" ng-click="">
-                                </div>
-                                <div class="row items_header">{{bouquet.name}}</div>
-                                <div class="row items_descr">{{bouquet.descr}} шт</div>
-                                <div class="row items_">
-                                    <div class="col-sm-6 price">{{bouquet.price}} грн</div>
-                                    <div class="col-sm-6">
-                                        <button type="button" class="btn btn-success btn-lg btn-block">Купити</button>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="col-md-4 hover-shadow">
-                            <a href="#">
-                                <img src="photo/rosesbaj17.jpg" class="img-responsive hover-shadow">
-                                <div class="row">
-                                    <img src="{{bouquet.img}}" class="items_img" alt="" ng-click="">
-                                </div>
-                                <div class="row items_header">{{bouquet.name}}</div>
-                                <div class="row items_descr">{{bouquet.descr}} шт</div>
-                                <div class="row items_">
-                                    <div class="col-sm-6 price">{{bouquet.price}} грн</div>
-                                    <div class="col-sm-6">
-                                        <button type="button" class="btn btn-success btn-lg btn-block">Купити</button>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                <div class = "item">
+                    <div class = "col-md-4 hover-shadow">
+                        <a href = "#">
+                            <img src="photo/fildflowers.jpg" class="img-responsive hover-shadow">
+                            <div class="row">
+                                <img src="{{bouquet.img}}" class="items_img" alt="" ng-click="">
+                            </div>
+                            <div class="row items_header">{{bouquet.name}}</div>
+                            <div class="row items_descr">{{bouquet.descr}} шт</div>
+                            <div class="row items_">
+                                <div class="col-sm-6 price">{{bouquet.price}} грн</div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="btn btn-success btn-lg btn-block">Купити</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="col-md-4 hover-shadow">
+                        <a href="#">
+                            <img src="photo/chrisantem13.jpg" class="img-responsive hover-shadow">
+                            <div class="row">
+                                <img src="{{bouquet.img}}" class="items_img" alt="" ng-click="">
+                            </div>
+                            <div class="row items_header">{{bouquet.name}}</div>
+                            <div class="row items_descr">{{bouquet.descr}} шт</div>
+                            <div class="row items_">
+                                <div class="col-sm-6 price">{{bouquet.price}} грн</div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="btn btn-success btn-lg btn-block" ng-click="">Купити</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="col-md-4 hover-shadow">
+                        <a href="#">
+                            <img src="photo/mixwhite&yellow.jpg" class="img-responsive hover-shadow">
+                            <div class="row">
+                                <img src="{{bouquet.img}}" class="items_img" alt="" ng-click="">
+                            </div>
+                            <div class="row items_header">{{bouquet.name}}</div>
+                            <div class="row items_descr">{{bouquet.descr}} шт</div>
+                            <div class="row items_">
+                                <div class="col-sm-6 price">{{bouquet.price}} грн</div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="btn btn-success btn-lg btn-block">Купити</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="col-md-4 hover-shadow">
+                        <a href="#">
+                            <img src="photo/lilywhite7.jpg" class="img-responsive hover-shadow">
+                            <div class="row">
+                                <img src="{{bouquet.img}}" class="items_img" alt="" ng-click="">
+                            </div>
+                            <div class="row items_header">{{bouquet.name}}</div>
+                            <div class="row items_descr">{{bouquet.descr}} шт</div>
+                            <div class="row items_">
+                                <div class="col-sm-6 price">{{bouquet.price}} грн</div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="btn btn-success btn-lg btn-block">Купити</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="col-md-4 hover-shadow">
+                        <a href="#">
+                            <img src="photo/rosesbaj17.jpg" class="img-responsive hover-shadow">
+                            <div class="row">
+                                <img src="{{bouquet.img}}" class="items_img" alt="" ng-click="">
+                            </div>
+                            <div class="row items_header">{{bouquet.name}}</div>
+                            <div class="row items_descr">{{bouquet.descr}} шт</div>
+                            <div class="row items_">
+                                <div class="col-sm-6 price">{{bouquet.price}} грн</div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="btn btn-success btn-lg btn-block">Купити</button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
         </div>
-         </div>
+    </div>
+</div>

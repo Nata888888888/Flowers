@@ -1,27 +1,46 @@
-<div class="container">
-    <div class="col-sm-2" ng-repeat="flower in flowers">
-        <img src="{{flower.img}}" alt="">
-        <div ng-click="removeItem(id)">Видалити</div>
-        <div ng-click="editItem(id)">Редагувати</div>
-        
+<div class="container-fluid">
+   <div class="row">
+   <div class="col-sm-3">
+       <div class="row category">Вибрати категорію: 
+            <ul class="navCategory">
+            <li ng-repeat="cat in categorys track by $index">
+            <span class="glyphicon glyphicon-ok"></span>{{cat}}<span class="glyphicon glyphicon-remove"></span></li>
+        </ul>
+        <input ng-model="newCat" type="text"></input>
+        <button ng-click="addCat(newCat)">Додати категорію</button>
+       </div>
+   </div>
+   <div class="col-sm-9">
+    <div class="col-sm-2 edtFlwr" ng-repeat="flower in flowers">
+        <label for=""><img src="{{flower.img}}" alt="{{flower.name}}">
+        <div>{{flower.name}}</div>
+        <div>{{flower.descr}} шт</div>
+        <div>{{flower.price}} грн</div>
+        <button class="btn btn-danger" ng-click="removeItem(flower.id)">Видалити</button>
+        <button class="btn btn-primary" ng-click="editItem(flower.id)">&#9998;Редагувати</button>
+        <input type="checkbox"></label>
     </div>
-    <button ng-click="editUser('new')">&#9998; Додати</button>
-    <div ng-click="addItem()">
+    </div>
+    </div>
+    <div class="row">
+    <button class="btn btn-success" ng-click="addItem()">&#9998; Додати новий</button>
+    
         <form ng-hide="hideform">
-             <h3 ng-show="edit">Додати</h3>
+             <h3 ng-show="edit">Додати новий букет</h3>
+              <h3 ng-hide="edit">Редагувати букет</h3>
              <label>Зображення</label>
-                <input type="text" ng-model="img" ng-disabled="!edit" placeholder="зображення">
+                <input type="file" file="file" name="filetoupload" placeholder="зображення">
                  <br>
              <label>Назва</label>
-                <input type="text" ng-model="name" ng-disabled="!edit" placeholder="назва">
+                <input type="text" ng-model="name" placeholder="назва">
                  <br>
-            <label>кількість</label>
-                <input type="text" ng-model="descr" ng-disabled="!edit" placeholder="кількість">
+            <label>кількість, шт</label>
+                <input type="text" ng-model="descr" placeholder="кількість">
                  <br>
-            <label>ціна</label>
-                <input type="text" ng-model="price" ng-disabled="!edit" placeholder="ціна">
+            <label>ціна, грн</label>
+                <input type="text" ng-model="price" placeholder="ціна">
                  <br>
-            <button ng-disabled="error || incomplete">&#10004; Зберегти зміни</button>
+            <button class="btn btn-success" ng-click="saveChanges(id)">&#10004; Зберегти зміни</button>
         </form>
-    </div>
+        </div>
 </div>

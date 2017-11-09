@@ -1,6 +1,12 @@
 var myApp = angular.module('myApp');
-myApp.controller('flowerController', function($scope, $http, flowersFactory) {
+myApp.controller('flowerController', function($scope, $http, $mdMedia, flowersFactory) {
     $scope.arrChoose = [];
+    $scope.isMenuHidden = true;
+    
+    $scope.$watch(function() { return $mdMedia('gt-sm'); },
+        function(isWider960) {
+            $scope.isMenuHidden = isWider960;
+    });
 
     flowersFactory.loadFlowers(function(flowers) {
         $scope.flowers = flowers;
@@ -91,6 +97,7 @@ myApp.controller('flowerController', function($scope, $http, flowersFactory) {
     //        price: '2200'
     //    }];
     $scope.basketList = flowersFactory.basketFlowers;
+//    $scope.count=$scope.basketList.length;
     $scope.addIntoBasket = function(id) {
         function checkId(flower) {
             if (flower.id == id) {
@@ -99,9 +106,16 @@ myApp.controller('flowerController', function($scope, $http, flowersFactory) {
             return false;
         }
         let flower = $scope.flowers.find(checkId);
+        flower.number = 1;
         $scope.basketList.push(flower);
     }
-
+    $scope.hidemenu = function(){
+        if (window.matchMedia("(max-width: 900px)").matches) {
+            return true;
+        }else{
+            return false;
+        }
+    }
     $scope.selectBouqet = function(idx, id) {
         $scope.selBouqet = $scope.flowers[idx];
         $scope.addIntoBasket(id);
@@ -114,6 +128,48 @@ myApp.controller('flowerController', function($scope, $http, flowersFactory) {
     $scope.buy = function() {
         alert($scope.basketList.length);
     }
+    $scope.countFlowers = function(){
+        var sum = 0;
+        
+        for (let flower of $scope.basketList){
+            sum += Number(flower.number);
+        }
+        
+        return sum;
+    }
+        $scope.countPrice = function(){
+        var sum = 0;
+        
+        for (let flower of $scope.basketList){
+            sum += Number(flower.price * flower.number);
+        }
+        
+        return sum;
+    }
+        $scope.getOrder = function(){
+            $scope.order = new Array();
+            let a = $scope.order;
+            let b = $scope.basketList;
+            let t = $scope.time;
+            let p1 = $scope.phone1;
+            let p2 = $scope.phone2;
+            let adr = $scope.address;
+            let s = $scope.sign;
+            var dateControl = document.querySelector('input[type="datetime-local"]');
+            var x=dateControl.value;
+            console.log(x);
+            a.push(b, p1, p2, adr, t, s);
+            console.log(a);
+        }
+        $scope.backToSite = function (){
+//            $modalInstance.dismiss('cancel'); 
+             window.location.replace('http://localhost:8000/#!/');
+        }
+        $scope.basketClick = function () {
+//            $('#myModal').dismiss('close');
+            window.location = "#!basket";
+        }
+    
 }).$inject = ["flowersFactory"];
 
 //myApp.config(function($routeProvider) {
@@ -209,6 +265,3 @@ myApp.directive("footerBlock", function() {
     };
 });
 
-function basketClick() {
-    window.location = "#!basket";
-}

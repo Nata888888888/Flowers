@@ -1,65 +1,73 @@
-<div class="container">
-    <div class="row">
-        <table>
+<div class = "container">
+    <div class = "row basket table-responsive">
+        <table class = "table table-bordered ">
             <thead>
                 <tr>
                    <th>Зображення</th>
                     <th>Назва</th>
                     <th>Кількість</th>
                     <th>Ціна</th>
-                    <td></td>
                 </tr>
             </thead>
-            <tbody>
-                {{basketList.length}}
-                <tr ng-repeat="item in basketList">
+            <tbody class = "table-striped">
+<!--                {{basketList.length}}-->
+                <tr ng-repeat = "item in basketList">
+                   <td><img class = "item_img" src = "{{item.img}}" alt = "{{item.img}}"></td>
                     <td>{{item.name}}</td>
                     <td>
-                        <input type="text" ng-model="number">
+                        <input type = "number" name = "quantity" min = "0" max = "10" ng-model = "item.number">
                     </td>
-                    <td>{{item.price*number}}</td>
-                    <td></td>
+                    <td>{{item.price*item.number}} грн</td>
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
                     <td></td>
                     <td>Разом</td>
-                    <td>0</td>
-                    <td></td>
+                    <td>{{countFlowers()}}</td>
+                    <td>{{countPrice()}} грн</td>
                 </tr>
                 <tr>
                     <td>телефон</td>
                     <td>
-                        <input type="text">
+                       Замовника <input type = "text" placeholder = "+38096xxxxxxx" ng-model="phone1" required>
+                       Отримувача <input type = "text" placeholder = "+38096xxxxxxx" ng-model="phone2" required>
                     </td>
                 </tr>
                 <tr>
                     <td>адреса доставки</td>
                     <td>
-                        <input type="text">
+                        <input type = "text" placeholder = "Введіть адресу доставки" ng-model = "address" required>
                     </td>
                 </tr>
                 <tr>
-                    <td>час</td>
-                    <td>
-                        <input type="text">
+                    <td>час </td>
+                   <td>
+                    <wy-time-picker
+                        data-dropdown-toggle-state="settings.dropdownToggleState"
+                        data-time-settings="time"
+                        data-theme="settings.theme"
+                        data-no-range="settings.noRange"
+                        data-format="settings.format"
+                        data-no-validation="settings.noValidation"
+                        data-apply-callback="onApplyTimePicker()"
+                        data-clear-callback="onClearTimePicker()">
+                    </wy-time-picker>
                     </td>
                 </tr>
                 <tr>
                     <td>для кого і як підписати</td>
                     <td>
-                        <textarea type="text"></textarea>
+                        <textarea type = "text" placeholder = "Введіть текст" ng-model="sign" required></textarea>
                     </td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td>
-                        <button>продовжити покупки</button>
-                    </td>
                     <td></td>
                     <td>
-                        <button ng-click="buy()">оплатити</button>
+                        <button class = "btn btn-primary" ng-click="backToSite()">продовжити покупки</button></td>
+                    <td>
+                        <button class = "btn btn-success" ng-click = "getOrder()">оплатити</button>
                     </td>
                 </tr>
             </tfoot>
