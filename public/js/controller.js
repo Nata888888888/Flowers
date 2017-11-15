@@ -2,29 +2,35 @@ var myApp = angular.module('myApp');
 myApp.controller('flowerController', function($scope, $http, $mdMedia, flowersFactory) {
     $scope.arrChoose = [];
     $scope.isMenuHidden = true;
+    var flowersPerPage = 6;
     
     $scope.$watch(function() { return $mdMedia('gt-sm'); },
         function(isWider960) {
             $scope.isMenuHidden = isWider960;
-    });
-
-    flowersFactory.loadFlowers(function(flowers) {
-        $scope.flowers = flowers;
-        for (var i = 0; i < 5; i++) {
-            $scope.arrChoose.push($scope.flowers[i]);
-        };
-    });
-
-    $scope.arrFlower = [1, 2, 3];
+    });    
 
     $scope.choosePage = function(index) {
         console.log(index);
         $scope.arrChoose = [];
-        var a = 0 + index * 5;
-        for (var i = a; i < (a + 5); i++) {
+        var a = index * flowersPerPage;
+        var remaining = $scope.flowers.length - a;
+        if (remaining > flowersPerPage) {
+            remaining = flowersPerPage;
+        }
+        for (var i = a; i < a + remaining; i++) {
             $scope.arrChoose.push($scope.flowers[i]);
         }
     };
+    
+    flowersFactory.loadFlowers(function(flowers) {
+        $scope.flowers = flowers;
+        
+        $scope.arrFlower = [];
+        for (var i=0; i<flowers.length / flowersPerPage; i++)
+            $scope.arrFlower.push(i+1);
+        
+        $scope.choosePage(0);
+    });
     //  $scope.flowers = [{
     //        img:'photo/redroses101.jpg',
     //        name: 'Троянда червона',
