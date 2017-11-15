@@ -18,10 +18,10 @@ app.use(cors());
 //mysql
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'flowershop'
+    host: 'sql11.freemysqlhosting.net',
+    user: 'sql11205327',
+    password: 'MlUZnqcKdi',
+    database: 'sql11205327'
 });
 
 let initDb = function() {
