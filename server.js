@@ -6,7 +6,7 @@ const mysql = require('mysql');
 const multiparty = require('multiparty');
 const formidable = require('formidable');
 const fs = require("fs");
-const port = 8000;
+var port = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
@@ -159,5 +159,5 @@ app.post('/fileupload', function(req, res) {
 //запускаємо сервер
 app.listen(port, function(err) {
     if (err) throw err;
-    console.log('server start on port 8000!');
+    console.log('server start on port '+port+'!');
 });
