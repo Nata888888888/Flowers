@@ -9,7 +9,7 @@ myApp.controller('editController', function($scope, $http, flowersFactory) {
             function loadFlowers(onLoad) {
                 var flowers = [];
 
-                $http.get('http://localhost:8000/flowers')
+                $http.get('flowers')
                     .then(function successCallback(response) {
                         flowers = response.data;
                         onLoad(flowers);
@@ -46,7 +46,7 @@ myApp.controller('editController', function($scope, $http, flowersFactory) {
     }
 
     function deleteFlower(flowerId) {
-        $http.get('http://localhost:8000/delflower/' + flowerId, {
+        $http.get('delflower/' + flowerId, {
             params: {
                 id: flowerId
             }
@@ -59,7 +59,7 @@ myApp.controller('editController', function($scope, $http, flowersFactory) {
     }
 
     function toeditFlower(flowerId) {
-        $http.get('http://localhost:8000/toeditflower/' + flowerId, {
+        $http.get('toeditflower/' + flowerId, {
             params: {
                 id: flowerId
             }
@@ -77,7 +77,7 @@ myApp.controller('editController', function($scope, $http, flowersFactory) {
         flower.descr = $scope.descr;
         flower.price = $scope.price;
 
-        $http.get('http://localhost:8000/editflower', {
+        $http.get('editflower', {
             params: {
                 id: $scope.id,
                 name: flower.name,
@@ -106,7 +106,7 @@ myApp.controller('editController', function($scope, $http, flowersFactory) {
         var formData = new FormData();        
         formData.append('id', id);
         formData.append('filetoupload', $scope.file);
-        $http.post('http://localhost:8000/fileupload', formData, {
+        $http.post('fileupload', formData, {
             transformRequest: angular.identity,
             headers: {
                 'Content-Type': undefined
@@ -124,7 +124,7 @@ myApp.controller('editController', function($scope, $http, flowersFactory) {
     }
 
     function addFlower() {
-        $http.get('http://localhost:8000/addflower', {
+        $http.get('addflower', {
             params: {
                 name: $scope.name,
                 descr: $scope.descr,

@@ -163,7 +163,7 @@ myApp.controller('flowerController', function($scope, $http, $mdMedia, flowersFa
         }
         $scope.backToSite = function (){
 //            $modalInstance.dismiss('cancel'); 
-             window.location.replace('http://localhost:8000/#!/');
+             window.location.replace('#!/');
         }
         $scope.basketClick = function () {
 //            $('#myModal').dismiss('close');

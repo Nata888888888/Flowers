@@ -7,7 +7,7 @@ app.factory('flowersFactory', ['$http',
         function loadFlowers(onLoad) {
             var flowers = [];
             
-            $http.get('http://localhost:8000/flowers')
+            $http.get('flowers')
             .then(function successCallback(response) {
                 flowers = response.data;
                 onLoad(flowers);
